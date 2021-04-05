@@ -721,6 +721,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@{item().name}",
+							"type": "Expression"
+						},
 						"container": "storagecontainer1"
 					},
 					"columnDelimiter": ",",
