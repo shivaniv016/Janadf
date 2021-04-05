@@ -23,6 +23,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
 		},
+		"SqlServer2adv_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer2adv'"
+		},
+		"SqlServer2adv_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer2adv'"
+		},
 		"SqlServerLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServerLS'"
@@ -32,6 +40,10 @@
 			"metadata": "Secure string for 'password' of 'SqlServerLS'"
 		},
 		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin"
+		},
+		"SqlServer2adv_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "admin"
 		},
@@ -78,6 +90,12 @@
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
 					},
+					"SqlServer2adv_connectionString": {
+						"value": "[parameters('SqlServer2adv_connectionString')]"
+					},
+					"SqlServer2adv_password": {
+						"value": "[parameters('SqlServer2adv_password')]"
+					},
 					"SqlServerLS_connectionString": {
 						"value": "[parameters('SqlServerLS_connectionString')]"
 					},
@@ -86,6 +104,9 @@
 					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					},
+					"SqlServer2adv_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer2adv_properties_typeProperties_userName')]"
 					},
 					"SqlServerLS_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServerLS_properties_typeProperties_userName')]"

@@ -17,6 +17,12 @@
 		"SqlServer1_password": {
 			"value": ""
 		},
+		"SqlServer2adv_connectionString": {
+			"value": ""
+		},
+		"SqlServer2adv_password": {
+			"value": ""
+		},
 		"SqlServerLS_connectionString": {
 			"value": ""
 		},
@@ -24,6 +30,9 @@
 			"value": ""
 		},
 		"SqlServer1_properties_typeProperties_userName": {
+			"value": "admin"
+		},
+		"SqlServer2adv_properties_typeProperties_userName": {
 			"value": "admin"
 		},
 		"SqlServerLS_properties_typeProperties_userName": {
