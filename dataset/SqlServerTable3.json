@@ -2,7 +2,7 @@
 	"name": "SqlServerTable3",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SqlServer1",
+			"referenceName": "SqlServerLS",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -14,7 +14,7 @@
 		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
+			"schema": "",
 			"table": {
 				"value": "@dataset().tablenames",
 				"type": "Expression"
