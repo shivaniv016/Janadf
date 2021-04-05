@@ -2,7 +2,7 @@
 	"name": "SqlServerTable3",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SqlServerLS",
+			"referenceName": "SqlServer1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
