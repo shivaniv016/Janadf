@@ -11,11 +11,20 @@
 		"AzureSqlDatabaseLS_connectionString": {
 			"value": ""
 		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
 		"SqlServerLS_connectionString": {
 			"value": ""
 		},
 		"SqlServerLS_password": {
 			"value": ""
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "admin"
 		},
 		"SqlServerLS_properties_typeProperties_userName": {
 			"value": "admin"

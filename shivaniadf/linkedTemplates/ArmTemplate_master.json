@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseLS'"
 		},
+		"SqlServer1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer1'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
 		"SqlServerLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServerLS'"
@@ -22,6 +30,10 @@
 		"SqlServerLS_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServerLS'"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin"
 		},
 		"SqlServerLS_properties_typeProperties_userName": {
 			"type": "string",
@@ -60,11 +72,20 @@
 					"AzureSqlDatabaseLS_connectionString": {
 						"value": "[parameters('AzureSqlDatabaseLS_connectionString')]"
 					},
+					"SqlServer1_connectionString": {
+						"value": "[parameters('SqlServer1_connectionString')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
 					"SqlServerLS_connectionString": {
 						"value": "[parameters('SqlServerLS_connectionString')]"
 					},
 					"SqlServerLS_password": {
 						"value": "[parameters('SqlServerLS_password')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
 					},
 					"SqlServerLS_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServerLS_properties_typeProperties_userName')]"
