@@ -1,0 +1,24 @@
+{
+	"name": "SourceDataset_mwc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer2adv",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_table": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "HumanResources",
+			"table": {
+				"value": "@dataset().cw_table",
+				"type": "Expression"
+			}
+		}
+	}
+}
