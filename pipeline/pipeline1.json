@@ -60,10 +60,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "SqlServerSource",
-									"sqlReaderQuery": {
-										"value": "select * from [humanresources].[employeedepartmenthistory]\nwhere departmentid =@{item().departmentID}",
-										"type": "Expression"
-									},
+									"sqlReaderQuery": "select * from [humanresources].[employeedepartmenthistory]\nwhere departmentid =@{item().departmentID}",
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
