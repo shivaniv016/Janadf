@@ -8,6 +8,9 @@
 		"AzureBlobStoragedestinationLS_connectionString": {
 			"value": ""
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
 		"AzureSqlDatabaseLS_connectionString": {
 			"value": ""
 		},
