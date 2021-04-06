@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.tablenamelist",
+						"value": "@pipeline().parameters.Tablelist",
 						"type": "Expression"
 					},
 					"activities": [
@@ -50,10 +50,11 @@
 									"referenceName": "AdventureWorkstablesOnpremisesource",
 									"type": "DatasetReference",
 									"parameters": {
-										"TableName": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
+										"TableName": [
+											{
+												"name": "EmployeeDepartmentHistory"
+											}
+										]
 									}
 								}
 							],
@@ -69,7 +70,7 @@
 			}
 		],
 		"parameters": {
-			"tablenamelist": {
+			"Tablelist": {
 				"type": "array"
 			}
 		},
