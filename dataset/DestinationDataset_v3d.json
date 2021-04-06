@@ -1,19 +1,29 @@
 {
-	"name": "DelimitedText3",
+	"name": "DestinationDataset_v3d",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorageLS",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "String"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().cw_fileName",
+					"type": "Expression"
+				},
 				"container": "output"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": []

@@ -1,0 +1,171 @@
+{
+	"name": "CopybulkTablestoBlob",
+	"properties": {
+		"description": "It copies multiple tables at one go to blob container ",
+		"activities": [
+			{
+				"name": "ForEach_v3d",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_v3d",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "SalesLT.@{item().source.table}"
+								},
+								{
+									"name": "Destination",
+									"value": "output//@{item().destination.fileName}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"validateDataConsistency": false
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset_v3d",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_table": "@item().source.table"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_v3d",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_fileName": "@item().destination.fileName"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"table": "Address"
+						},
+						"destination": {
+							"fileName": "SalesLTAddress"
+						}
+					},
+					{
+						"source": {
+							"table": "Customer"
+						},
+						"destination": {
+							"fileName": "SalesLTCustomer"
+						}
+					},
+					{
+						"source": {
+							"table": "CustomerAddress"
+						},
+						"destination": {
+							"fileName": "SalesLTCustomerAddress"
+						}
+					},
+					{
+						"source": {
+							"table": "Product"
+						},
+						"destination": {
+							"fileName": "SalesLTProduct"
+						}
+					},
+					{
+						"source": {
+							"table": "ProductCategory"
+						},
+						"destination": {
+							"fileName": "SalesLTProductCategory"
+						}
+					},
+					{
+						"source": {
+							"table": "ProductDescription"
+						},
+						"destination": {
+							"fileName": "SalesLTProductDescription"
+						}
+					},
+					{
+						"source": {
+							"table": "ProductModel"
+						},
+						"destination": {
+							"fileName": "SalesLTProductModel"
+						}
+					},
+					{
+						"source": {
+							"table": "ProductModelProductDescription"
+						},
+						"destination": {
+							"fileName": "SalesLTProductModelProductDescription"
+						}
+					},
+					{
+						"source": {
+							"table": "SalesOrderDetail"
+						},
+						"destination": {
+							"fileName": "SalesLTSalesOrderDetail"
+						}
+					},
+					{
+						"source": {
+							"table": "SalesOrderHeader"
+						},
+						"destination": {
+							"fileName": "SalesLTSalesOrderHeader"
+						}
+					}
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-04-02T14:38:52Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

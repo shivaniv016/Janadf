@@ -1,8 +1,8 @@
 {
-	"name": "DelimitedText3",
+	"name": "SinkDataset",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorageLS",
+			"referenceName": "AzureStorageLinkedService",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "output"
+				"fileName": {
+					"value": "@CONCAT('Incremental-', pipeline().RunId, '.txt')",
+					"type": "Expression"
+				},
+				"container": "adfwatermark"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

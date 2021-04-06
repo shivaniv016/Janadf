@@ -1,8 +1,8 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "BulktabledestinationDataset",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "AzureSqlDatabaseBulkLs",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -15,7 +15,7 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "SalesLt",
+			"schema": "dbo",
 			"table": {
 				"value": "@dataset().tablename",
 				"type": "Expression"

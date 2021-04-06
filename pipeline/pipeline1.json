@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
-				"type": "Lookup",
+				"name": "SCDProductdataflow",
+				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,92 +15,20 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "SqlServerSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+					"dataflow": {
+						"referenceName": "SCDProductdataflow",
+						"type": "DataFlowReference"
 					},
-					"dataset": {
-						"referenceName": "SqlServerTable5",
-						"type": "DatasetReference"
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
 					},
-					"firstRowOnly": false
-				}
-			},
-			{
-				"name": "ForEach dept fetch emp",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Lookup1').output",
-						"type": "Expression"
-					},
-					"activities": [
-						{
-							"name": "Copy emp data for each depy",
-							"type": "Copy",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "SqlServerSource",
-									"sqlReaderQuery": "select * from [humanresources].[employeedepartmenthistory]\nwhere departmentid =@{item().departmentID}",
-									"queryTimeout": "02:00:00",
-									"partitionOption": "None"
-								},
-								"sink": {
-									"type": "AzureSqlSink",
-									"tableOption": "autoCreate"
-								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "SqlServerTable6",
-									"type": "DatasetReference"
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "AzureSqlTable3",
-									"type": "DatasetReference",
-									"parameters": {
-										"tablename": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
-									}
-								}
-							]
-						}
-					]
+					"traceLevel": "Fine"
 				}
 			}
 		],
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-04-06T10:50:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

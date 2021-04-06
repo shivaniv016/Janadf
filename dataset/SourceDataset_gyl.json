@@ -1,23 +1,22 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "SourceDataset_gyl",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "AzureSqlDatabaseBulkLs",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"tablename": {
-				"type": "string",
-				"defaultValue": "@{item().name}"
+			"cw_table": {
+				"type": "String"
 			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "SalesLt",
+			"schema": "SalesLT",
 			"table": {
-				"value": "@dataset().tablename",
+				"value": "@dataset().cw_table",
 				"type": "Expression"
 			}
 		}

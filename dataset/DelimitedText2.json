@@ -2,7 +2,7 @@
 	"name": "DelimitedText2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStoragedestinationLS",
+			"referenceName": "AzureBlobStorageLS",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,12 +10,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "storagecontainer1"
+				"container": "output"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
 		"schema": []
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

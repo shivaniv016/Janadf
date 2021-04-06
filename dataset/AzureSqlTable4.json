@@ -1,12 +1,12 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "AzureSqlTable4",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "exAzureSqlDatabaseLS",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"tablename": {
+			"Tablename": {
 				"type": "string",
 				"defaultValue": "@{item().name}"
 			}
@@ -15,9 +15,9 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "SalesLt",
+			"schema": "SalesLTI",
 			"table": {
-				"value": "@dataset().tablename",
+				"value": "@dataset().Tablename",
 				"type": "Expression"
 			}
 		}

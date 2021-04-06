@@ -1,0 +1,53 @@
+{
+	"name": "ex2pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select concat (FirstName , ' ' ,Lastname) as CustomerName, Product.Name as ProductName, Product.Color, SalesOrderHeader.OrderDate, SalesOrderHeader.SalesOrderNumber , SalesOrderDetail.LineTotal from [SalesLT].[Customer] , [SalesLT].[Product] , [SalesLT].[SalesOrderHeader], [SalesLT].[SalesOrderDetail] where\nSalesOrderHeader.CustomerID = Customer.CustomerId and SalesOrderDetail.ProductID= Product.ProductID and SalesOrderDetail.SalesOrderID = SalesOrderHeader.SalesOrderID\nselect concat (FirstName , ' ' ,Lastname) as CustomerName, Product.Name as ProductName, Product.Color, SalesOrderHeader.OrderDate, SalesOrderHeader.SalesOrderNumber , SalesOrderDetail.LineTotal from [SalesLT].[Customer] , [SalesLT].[Product] , [SalesLT].[SalesOrderHeader], [SalesLT].[SalesOrderDetail] where\nSalesOrderHeader.CustomerID = Customer.CustomerId and SalesOrderDetail.ProductID= Product.ProductID and SalesOrderDetail.SalesOrderID = SalesOrderHeader.SalesOrderID\n\n\n\n\n",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "exAzureSqlTable",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-04-03T17:10:39Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

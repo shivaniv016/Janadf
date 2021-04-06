@@ -1,24 +1,13 @@
 {
-	"name": "AzureSqlTable3",
+	"name": "exAzureSqlTable",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "exAzureSqlDatabaseLS",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"tablessql": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
-		"typeProperties": {
-			"table": {
-				"value": "@dataset().tablessql",
-				"type": "Expression"
-			}
-		}
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

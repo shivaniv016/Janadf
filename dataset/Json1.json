@@ -1,0 +1,35 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ex2AzureBlobStoragedestination1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "ex2"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Prop_0": {
+					"type": "string"
+				},
+				"Prop_1": {
+					"type": "string"
+				},
+				"Prop_2": {
+					"type": "string"
+				},
+				"Prop_3": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
