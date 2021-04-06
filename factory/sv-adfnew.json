@@ -1,0 +1,9 @@
+{
+	"name": "sv-adfnew",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b7509a49-ddb2-4a59-9aa1-90ef81c84cc5",
+		"tenantId": "93e56e53-3d54-4c1b-979f-2a21a2ff8e50"
+	}
+}
