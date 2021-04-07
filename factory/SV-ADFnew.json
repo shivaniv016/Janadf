@@ -1,0 +1,9 @@
+{
+	"name": "SV-ADFnew",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cc15fd70-f6dc-4a05-99fc-42896fbe5e33",
+		"tenantId": "93e56e53-3d54-4c1b-979f-2a21a2ff8e50"
+	}
+}

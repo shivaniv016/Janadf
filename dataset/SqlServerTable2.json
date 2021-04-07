@@ -2,176 +2,87 @@
 	"name": "SqlServerTable2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SqlServerLS",
+			"referenceName": "SqlServer1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [
 			{
-				"name": "ProductKey",
+				"name": "BusinessEntityID",
 				"type": "int",
 				"precision": 10
 			},
 			{
-				"name": "ProductAlternateKey",
+				"name": "NationalIDNumber",
 				"type": "nvarchar"
 			},
 			{
-				"name": "ProductSubcategoryKey",
-				"type": "int",
-				"precision": 10
+				"name": "LoginID",
+				"type": "nvarchar"
 			},
 			{
-				"name": "WeightUnitMeasureCode",
+				"name": "OrganizationNode",
+				"type": "AdventureWorks2012.sys.hierarchyid"
+			},
+			{
+				"name": "OrganizationLevel",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "JobTitle",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BirthDate",
+				"type": "date"
+			},
+			{
+				"name": "MaritalStatus",
 				"type": "nchar"
 			},
 			{
-				"name": "SizeUnitMeasureCode",
+				"name": "Gender",
 				"type": "nchar"
 			},
 			{
-				"name": "EnglishProductName",
-				"type": "nvarchar"
+				"name": "HireDate",
+				"type": "date"
 			},
 			{
-				"name": "SpanishProductName",
-				"type": "nvarchar"
-			},
-			{
-				"name": "FrenchProductName",
-				"type": "nvarchar"
-			},
-			{
-				"name": "StandardCost",
-				"type": "money",
-				"precision": 19,
-				"scale": 4
-			},
-			{
-				"name": "FinishedGoodsFlag",
+				"name": "SalariedFlag",
 				"type": "bit"
 			},
 			{
-				"name": "Color",
-				"type": "nvarchar"
-			},
-			{
-				"name": "SafetyStockLevel",
+				"name": "VacationHours",
 				"type": "smallint",
 				"precision": 5
 			},
 			{
-				"name": "ReorderPoint",
+				"name": "SickLeaveHours",
 				"type": "smallint",
 				"precision": 5
 			},
 			{
-				"name": "ListPrice",
-				"type": "money",
-				"precision": 19,
-				"scale": 4
+				"name": "CurrentFlag",
+				"type": "bit"
 			},
 			{
-				"name": "Size",
-				"type": "nvarchar"
+				"name": "rowguid",
+				"type": "uniqueidentifier"
 			},
 			{
-				"name": "SizeRange",
-				"type": "nvarchar"
-			},
-			{
-				"name": "Weight",
-				"type": "float",
-				"precision": 15
-			},
-			{
-				"name": "DaysToManufacture",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "ProductLine",
-				"type": "nchar"
-			},
-			{
-				"name": "DealerPrice",
-				"type": "money",
-				"precision": 19,
-				"scale": 4
-			},
-			{
-				"name": "Class",
-				"type": "nchar"
-			},
-			{
-				"name": "Style",
-				"type": "nchar"
-			},
-			{
-				"name": "ModelName",
-				"type": "nvarchar"
-			},
-			{
-				"name": "LargePhoto",
-				"type": "varbinary"
-			},
-			{
-				"name": "EnglishDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "FrenchDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "ChineseDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "ArabicDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "HebrewDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "ThaiDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "GermanDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "JapaneseDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "TurkishDescription",
-				"type": "nvarchar"
-			},
-			{
-				"name": "StartDate",
+				"name": "ModifiedDate",
 				"type": "datetime",
 				"precision": 23,
 				"scale": 3
-			},
-			{
-				"name": "EndDate",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
-			},
-			{
-				"name": "Status",
-				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "DimProduct"
+			"schema": "HumanResources",
+			"table": "Employee"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

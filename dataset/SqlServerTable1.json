@@ -1,12 +1,16 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "SqlServerTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabasetrialdestination",
-			"type": "LinkedServiceReference"
+			"referenceName": "SqlServer1",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"servername": "DESKTOP-4HR7T1A\\SHIVANI",
+				"database": "adventureworks2012"
+			}
 		},
 		"annotations": [],
-		"type": "AzureSqlTable",
+		"type": "SqlServerTable",
 		"schema": [
 			{
 				"name": "AddressID",
@@ -35,8 +39,8 @@
 				"type": "nvarchar"
 			},
 			{
-				"name": "Spatiallocation",
-				"type": "Trialdb.sys.geography"
+				"name": "SpatialLocation",
+				"type": "AdventureWorks2012.sys.geography"
 			},
 			{
 				"name": "rowguid",
@@ -50,8 +54,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "Addressassign"
+			"schema": "Person",
+			"table": "Address"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

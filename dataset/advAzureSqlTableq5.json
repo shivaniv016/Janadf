@@ -1,8 +1,8 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "advAzureSqlTableq5",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabasetrialdestination",
+			"referenceName": "AzureSqlDatabaseq5ls",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -26,17 +26,16 @@
 				"type": "nvarchar"
 			},
 			{
-				"name": "StateProvinceID",
-				"type": "int",
-				"precision": 10
+				"name": "StateProvince",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CountryRegion",
+				"type": "nvarchar"
 			},
 			{
 				"name": "PostalCode",
 				"type": "nvarchar"
-			},
-			{
-				"name": "Spatiallocation",
-				"type": "Trialdb.sys.geography"
 			},
 			{
 				"name": "rowguid",
@@ -50,8 +49,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "Addressassign"
+			"schema": "SalesLT",
+			"table": "Address"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

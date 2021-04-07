@@ -2,53 +2,56 @@
 	"name": "AzureSqlTable3",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabasesink",
+			"referenceName": "AzureSqlDatabaseq5trialdbdest",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "ProductID",
+				"name": "AddressID",
 				"type": "int",
 				"precision": 10
 			},
 			{
-				"name": "Name",
+				"name": "AddressLine1",
 				"type": "nvarchar"
 			},
 			{
-				"name": "ProductNumber",
+				"name": "AddressLine2",
 				"type": "nvarchar"
 			},
 			{
-				"name": "Color",
+				"name": "City",
 				"type": "nvarchar"
 			},
 			{
-				"name": "StandardCost",
+				"name": "StateProvinceID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PostalCode",
 				"type": "nvarchar"
 			},
 			{
-				"name": "InsertedDate",
+				"name": "Spatiallocation",
+				"type": "Trialdb.sys.geography"
+			},
+			{
+				"name": "rowguid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "ModifiedDate",
 				"type": "datetime",
 				"precision": 23,
 				"scale": 3
-			},
-			{
-				"name": "UpdatedDate",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
-			},
-			{
-				"name": "HashKey",
-				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "DimProduct"
+			"table": "Addressassign"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

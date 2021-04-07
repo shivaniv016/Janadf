@@ -1,5 +1,5 @@
 {
-	"name": "Json1",
+	"name": "Json2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStoragedestination",
@@ -13,7 +13,26 @@
 				"container": "product"
 			}
 		},
-		"schema": {}
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Name": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				},
+				"StandardCost": {
+					"type": "number"
+				},
+				"Productid": {
+					"type": "integer"
+				},
+				"listPrice": {
+					"type": "number"
+				}
+			}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

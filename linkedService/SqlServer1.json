@@ -2,15 +2,25 @@
 	"name": "SqlServer1",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
+		"parameters": {
+			"servername": {
+				"type": "string",
+				"defaultValue": "DESKTOP-4HR7T1A\\SHIVANI"
+			},
+			"database": {
+				"type": "string",
+				"defaultValue": "adventureworks2012"
+			}
+		},
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
-			"connectionString": "integrated security=True;data source=DESKTOP-4HR7T1A\\SHIVANI;initial catalog=AdventureWorks2012",
+			"connectionString": "integrated security=True;data source=@{linkedService().servername};initial catalog=@{linkedService().database}",
 			"userName": "admin",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwYjY1ZGE5YS05NzE4LTQwNmItYWZkZS04YWFjMGMxZmFlY2UiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2ZTk2MjhlYS01MGFhLTQzYTktYWRlYy1iOTQ4MDQ1MTFlZjYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "demoonPremIR",
+			"referenceName": "SelfhoistedIR",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
